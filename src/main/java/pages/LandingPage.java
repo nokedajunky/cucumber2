@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class LandingPage extends BasePageObjectSetUp {
 
 
-    @FindBy(xpath = "//@[//div[contains(@class,'menu-body')]//span[contains(text(),'Logowanie')]]")
+    @FindBy(xpath = ".//*[@class='login-wrapper custom-margin']")
     private WebElement buttonLogowanie;
 
-    @FindBy(xpath = "//a[contains(@class,'register-wrapper')]")
+    @FindBy(xpath = ".//*[@class='register-wrapper']")
     private WebElement buttonRejestracja;
 
 
@@ -27,6 +27,13 @@ public class LandingPage extends BasePageObjectSetUp {
         Thread.sleep(5000);
         buttonRejestracja.click();
         return new RegisterPageOne(getDriver());
+    }
+
+    public void clickButtonLogowanie() throws InterruptedException {
+        //WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        //wait.until(ExpectedConditions.elementToBeClickable(buttonRejestracja));
+        Thread.sleep(5000);
+        buttonLogowanie.click();
     }
 
 }

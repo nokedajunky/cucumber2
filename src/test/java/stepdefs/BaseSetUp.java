@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pages.BasePageObjectSetUp;
+import pages.LandingPage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +14,13 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseSetUp {
 
-    private WebDriver driver;
+    //made it static so @before and @After can stay in this class
+    private static WebDriver driver;
+
+    //static constructor to make it work
+    public static WebDriver getDriver() {
+        return driver;
+    }
 
     @Before
     public void setUp() {

@@ -3,48 +3,26 @@ package stepdefs;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
-import pages.LandingPage;
-import pages.RegisterPageOne;
 
 public class RegisterStepDefs {
 
-    private WebDriver driver;
-    private LandingPage landingPage;
-    private RegisterPageOne registerPageOne;
+    @Given("^User navigates to the SignInPage$")
+    public void userNavigatesToTheSignInPage() {
 
-    // made a constructor so the @After and @Before can stay in other class
-    public RegisterStepDefs() {
-        driver = BaseSetUp.getDriver();
     }
 
-    @Given("^User navigates to the register page one$")
-    public void userNavigatesToTheRegisterPageOne() throws InterruptedException {
-        landingPage = new LandingPage(driver);
-        landingPage.clickButtonRejestracja();
+    @And("^User provides e-mail address$")
+    public void userProvidesEMailAddress() {
+
     }
 
-    @When("^User submits valid credentials in register page one$")
-    public void userSubmitsValidCredentialsInRegisterPageOne() throws InterruptedException {
-        registerPageOne = new RegisterPageOne(driver);
-        registerPageOne.clickRequiredAcceptances();
+    @And("^User provides valid personal credentials$")
+    public void userProvidesValidPersonalCredentials() {
+
     }
 
-    @And("^User submits valid credentials in register page two$")
-    public void userSubmitsValidCredentialsInRegisterPageTwo() {
-    }
+    @Then("^User is looged in to the created account$")
+    public void userIsLoogedInToTheCreatedAccount() {
 
-    @And("^User submits valid credentials in register page three$")
-    public void userSubmitsValidCredentialsInRegisterPageThree() {
     }
-
-    @And("^User submits valid credentials in register page four$")
-    public void userSubmitsValidCredentialsInRegisterPageFour() {
-    }
-
-    @Then("^confirmation message is displayed$")
-    public void confirmationMessageIsDisplayed() {
-    }
-
 }

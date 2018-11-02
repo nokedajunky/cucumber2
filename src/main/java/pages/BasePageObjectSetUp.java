@@ -22,4 +22,7 @@ public class BasePageObjectSetUp {
     public WebDriver getDriver() {
         return driver;
     }
+
 }
+
+

@@ -13,6 +13,7 @@ public class BasePageObjectSetUp {
 
     private WebDriver driver;
 
+    //Initializing web elements via cuper class constructor
     public BasePageObjectSetUp(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -21,4 +22,7 @@ public class BasePageObjectSetUp {
     public WebDriver getDriver() {
         return driver;
     }
+
 }
+
+
